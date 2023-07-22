@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- <script src="jquery-3.6.4.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/2e65e7d977.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="encyscript.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Amatic+SC:wght@700&family=Bebas+Neue&family=Courgette&family=Indie+Flower&family=Lato:wght@400;700&family=Lexend&family=Martian+Mono:wght@500&family=Pacifico&family=Roboto+Condensed&family=Sacramento&family=Satisfy&family=Shadows+Into+Light&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Amatic+SC:wght@700&family=Bebas+Neue&family=Courgette&family=Indie+Flower&family=Lato:wght@400;700&family=Lexend&family=Martian+Mono:wght@500&family=Pacifico&family=Roboto+Condensed&family=Sacramento&family=Satisfy&family=Shadows+Into+Light&family=Yusei+Magic&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #eee;
+        }
+
+        .loader-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #242f3f;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            border: 4px solid #Fff;
+            animation: loader 2s infinite ease;
+        }
+        /* .loader {
+            display: block;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: #fafafa url(page-loader.gif) no-repeat center center;
+            text-align: center;
+            color: #999;
+        } */
+        .loader-inner {
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+            background-color: #fff;
+            animation: loader-inner 2s infinite ease-in;
+        }
+
+        @keyframes loader {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(180deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes loader-inner {
+            0% {
+                height: 0%;
+            }
+
+            25% {
+                height: 0%;
+            }
+
+            50% {
+                height: 100%;
+            }
+
+            75% {
+                height: 100%;
+            }
+
+            100% {
+                height: 0%;
+            }
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        #preloader {
+            background: #000 url('Iridicent word.gif') no-repeat center center;
+            position: fixed;
+            background-size: 13%;
+            height: 100vh;
+            width: 100%;
+            z-index: 100;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: white;
+            background-color: #242f3f;
+            /* background-color: white; */
+            /* margin: 25px; */
+            /* background-image: linear-gradient(to bottom right, rgba(181, 8, 8, 0.748), rgb(200, 200, 200)); */
+        }
+
+        div.polaroid {
+            width: 23%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+            /* background-image: linear-gradient(to bottom right, rgb(235, 117, 244), rgba(235, 128, 128, 0.469), rgba(128, 128, 128, 0.343)); */
+            /* background-image: linear-gradient(to bottom right,#000080,#4682B4,#C83200,#FF8000); */
+            background-image: linear-gradient(to bottom right,#9fabe9,#8292e2,#6579db,#1a2974);
+        }
+
+        div.container {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .characters {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            text-align: center;
+
+        }
+
+        .row1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        .india {
+            margin: 10px 20px;
+            /* padding: 0 10px; */
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 {
+
+            font-size: 85px;
+            margin: 50px;
+            /* border-bottom: 10px solid white; */
+            /* border-bottom: 5px solid purple; */
+            display: inline;
+        }
+
+        a {
+            text-decoration: none;
+            /* font-size: 10px; */
+        }
+        p{
+            color: white;
+            padding: 10px 0;
+        }
+        .row1{
+            /* padding: 15px 0; */
+        }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+header{
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+}
+/* header::before{
+    content: '';
+    background: url('https://images.unsplash.com/photo-1618944913480-b67ee16d7b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+} */
+.topnavlogosearch{
+    /* border: 2px solid green; */
+    height: 12vh;
+    /* background-color: #242633b5; */
+    /* background-color: rgb(12, 16, 16); */
+}
+/* .topnavlogosearch:hover{
+    background-color: #2426334e;
+} */
+.logo{
+    display: inline;
+    position: absolute;
+    top: 15px;
+    left: 45vw;
+    color: white;
+}
+.logo img{
+    width: 180px;
+    height: 90px;
+    /* filter: invert(30%); */
+}
+.searchbar{
+    float: right;
+    margin-top: 40px;
+    margin-right: 10px;
+    /* border: 2px solid white; */
+    border-radius: 15px;
+    width: 200px;
+    /* display: flex; */
+
+}
+i{
+    color: white;
+    padding: 7px 8px;
+    /* background-image: linear-gradient(to bottom,#242633,#2426337d,#24263336); */
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+    
+}
+form{
+    width: 100%; 
+    border: 4px solid white;
+    border-radius: 15px;
+}
+.searchbar input{
+    width: 150px;
+    padding: 5px 8px;
+    background: none;
+    /* border: 2px solid white; */
+    /* border-radius: 15px; */
+    border: none;
+    font-size: 18px;
+    outline: none;
+}
+::placeholder{
+    color: white;
+}
+.homenav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.homeclass ul{
+    list-style: none;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    /* border: 4px solid red; */
+    /* background-color: #242633b5; */
+}
+/* .homeclass ul:hover{
+    background-color: #2426334e;
+} */
+.navbarhead{
+    /* background-color: #242633b5; */
+    /* background-image: linear-gradient(to bottom,#242633,#2426337d,#24263336); */
+    /* background-image: linear-gradient(to bottom,#242633,#2426338d,#2426334d); */
+    /* background-image: linear-gradient(to bottom right,Gray,rgba(128, 128, 128, 0.56),rgba(128, 128, 128, 0.307) ); */
+    background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0.746),rgba(0, 0, 0, 0.476),rgba(0, 0, 0, 0.211));
+}
+.navbarhead:hover{
+    background-image: linear-gradient(to bottom right,Gray,rgba(128, 128, 128, 0.543),rgba(128, 128, 128, 0.228)) ;
+    /* background-color: black; */
+}
+.homeclass ul li{
+    padding: 10px 20px;
+    margin: 20px 24px;
+}
+.homeclass ul li:hover{
+    /* border: 2px solid white;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.304); */
+    border-bottom: 3px solid rgb(157, 94, 215);
+}
+.homeclass ul li a{
+    text-decoration: none;
+}
+.heromsg1{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.heromsg1 img{
+    /* filter: invert(50%); */
+    margin: 80px;
+}
+.head123{
+    font-family: 'Yusei Magic', sans-serif;
+    width: 500px;
+    /* font-weight: 700; */
+    /* font-size: 3rem; */
+}
+.btnsection1{
+    color: white;
+    background-color: #514A92;
+    border: none;
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+}
+.btnsection1:hover{
+    background-color: #514a9274;
+    cursor: pointer;
+}
+.btnsection1 a{
+    text-decoration: none;
+}
+.heading1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* font-size: 20px; */
+}
+.heading1 p{
+    margin: 20px 0;
+    text-align: center;
+    width: 400px;
+}
+.Gryfinndor{
+    border-bottom: 10px solid transparent;
+    border-image: linear-gradient(0.25turn,#740001,#d3a625);
+    border-image-slice: 1;
+    width: 100%;
+}
+.slytheril{
+    border-bottom: 10px solid transparent;
+    border-image: linear-gradient(0.25turn,#1a472a,#2a623d,#aaaaaa);
+    border-image-slice: 1;
+    width: 100%;
+}
+.Ravenclaw{
+    border-bottom: 10px solid transparent;
+    border-image: linear-gradient(0.25turn,#0e1a40,#222f5b,#5d5d5d,#946b2d);
+    border-image-slice: 1;
+    width: 100%;
+}
+.Hufflepuf{
+    border-bottom: 10px solid transparent;
+    border-image: linear-gradient(0.25turn,#ecb939,#f0c75e,#726255,#372e29);
+    border-image-slice: 1;
+    width: 100%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  /* background-color: #333; */
+}
+
+/* .navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+} */
+
+.dropdown {
+  /* float: left; */
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 18px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: none;
+  /* border-bottom: 3px solid rgb(157, 94, 215); */
+}
+.dropdown:hover .dropbtn{
+    border-bottom: 3px solid rgb(157, 94, 215);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /* color: white; */
+  background-color: none;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #242633c7;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <nav id="navbar" class="navbarhead">
+            <div class="topnavlogosearch">
+                <div class="logo">
+                    <a href="index.html">
+
+                        <img src="Hogwarts-logo.png" alt="Logo">
+                    </a>
+                </div>
+                <div class="searchbar">
+                    <form>
+                        <!-- <button> -->
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        <!-- </button> -->
+                        <input type="text" name="imp" id="imp" class="imp1" placeholder="Search" onkeyup="impimp()">
+                    </form>
+
+                </div>
+                <div class="login">
+                    <!-- <button class="btnlog"><a class="ahreflo" href="loginpages.html">Log In</a></button> -->
+                </div>
+            </div>
+            <div class="homeclass">
+                <ul class="homenav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="information.html">Information</a></li>
+                    <li><a href="sorting.html">Sorting</a></li>
+                    <!-- <li><a href="Encyclopedia.html">Encyclopedia</a></li> -->
+                    <div class="navbar">
+                        <div class="dropdown">
+                          <button class="dropbtn">Encyclopedia
+                            <i class="fa fa-caret-down"></i>
+                          </button>
+                          <div class="dropdown-content">
+                            <a href="Encyclopedia.html">Characters</a>
+                            <a href="creature.html">Creatures</a>
+                          </div>
+                        </div> 
+                      </div>
+                    <li><a href="Housess.html">House</a></li>
+                    <li><a href="Books.html">Books</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- <div class="content">
+        <img src="https://picsum.photos/300/300/?random" />
+      </div> -->
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+<div class="characters">
+
+        <h2>Characters</h2>
+        <!-- <hr> -->
+        <div class="row1">
+
+            <div class="polaroid india Gryfinndor">
+                <a href="Gryfinndor.html">
+
+                    <img src="harry-potter-wallpaper-6.jpg" alt="5 Terre" style="width: 220px;height: 300px;">
+                    <div class="container">
+                        <p>Harry Potter</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="polaroid india slytheril">
+                <a href="slytheril.html">
+
+                    <img src="Severus_Snape.webp" alt="5 Terre" style="width: 220px;height: 300px;">
+                    <div class="container">
+                        <p>Professor Severus Snape</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="polaroid india Gryfinndor">
+                <a href="GryHermione.html">
+
+                    <img src="Hermione-Granger .jpg" alt="5 Terre" style="width: 220px;height: 300px;">
+                    <div class="container">
+                        <p>Hermione Granger</p>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    
+
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryRon.html">
+
+                <img src="Ron-Weasley.jpg" alt="Ron-Weasley.jpg" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Ron Weasley</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india slytheril">
+            <a href="Slyvoldemort.html">
+
+                <img src="Voldemort.webp" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Lord Voldemort</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india Gryfinndor">
+            <a href="Gryalbus.html">
+
+                <img src="Albus-Dumbledore (1).webp" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Professor Albus Dumbledore</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryGinny.html">
+
+                <img src="Ginney_weasely.jpeg" alt="Ron-Weasley.jpg" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Ginny Weasley</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryNeville.html">
+
+                <img src="harry-potter-neville-longbottom_612x497.jpg" alt="5 Terre" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Neville Longbottom</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india slytheril">
+            <a href="SlyDraco.html">
+
+                <img src="Draco_malfoy.jpeg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>
+                        Draco Malfoy</p>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="row1">
+
+        <div class="polaroid india Hufflepuf">
+            <a href="Hufflepuf.html">
+
+                <img src="Queenie_Goldstein.webp" alt="Ron-Weasley.jpg" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Queenie Goldstein</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffCredence.html">
+
+                <img src="Credence-Barebone.webp" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Credence Barebone</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india Ravenclaw">
+            <a href="Ravenclaw.html">
+
+                <img src="Luna_Lovegood.jpeg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Luna Lovegood</p>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+ 
+
+    <div class="row1">
+
+        <div class="polaroid india slytheril">
+            <a href="SlyGellert.html">
+
+                <img src="Gellert_Grindelwald (1) copy.jpg" alt="Ron-Weasley.jpg" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Gellert Grindelwald</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india slytheril">
+            <a href="SlyTina.html">
+
+                <img src="Tina_Goldstein (2) copy.jpg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Tina Goldstein</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffNewt.html">
+
+                <img src="newt-scamander (1).jpg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Newt Scamander</p>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryRubeus.html">
+
+                <img src="Rebeus_Hagrid.jpeg" alt="Ron-Weasley.jpg" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Rubeus Hagrid</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryGeorge.html">
+
+                <img src="George_Weasely.jpeg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>George Weasely</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryFred.html">
+
+                <img src="Fred_Weasely.jpeg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Fred Weasley</p>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="gRYmOLLY.HTML">
+
+                <img src="molly_W.jpeg" alt="Ron-Weasley.jpg" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Molly Weasely</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryBill.html">
+
+                <img src="Bill_Weasely.jpeg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Bill Weasely</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryArthur.html">
+
+                <img src="Arthur_Weasely.jpeg" alt="5 Terre" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Arthur Weasely</p>
+                </div>
+            </a>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryCharlie.html">
+
+                <img src="Chaelie_We.jpeg" alt="Ron-Weasley.jpg" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Charlie Weasely</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryPercy.html">
+
+                <img src="percy_W.jpeg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Percy Weasely</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GrySirius.html">
+
+                <img src="Sirius_Black.avif" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Sirius Black</p>
+                </div>
+            </a>
+        </div>
+
+
+
+    </div>
+
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryRemus.html">
+
+                <img src="Remus_L.jpeg" alt="Ron-Weasley.jpg" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Remus Lupin</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffNymphadora.html">
+
+                <img src="Nymphadora.jpeg" alt="5 Terre" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Nymphadora Tonks</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryMinerva.html">
+
+                <img src="Minerva_Mc.jpeg" alt="Minerva McGonagall" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Minerva McGonagall</p>
+                </div>
+            </a>
+        </div>
+
+
+        
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india slytheril">
+            <a href="SlyBellatrix.html">
+
+                <img src="Bellatrix.jpeg" alt="Bellatrix Lestrange" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Bellatrix Lestrange</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india slytheril">
+            <a href="SlyLucius.html">
+
+                <img src="Lucius.png" alt="Lucius Malfoy" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Lucius Malfoy</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india slytheril">
+            <a href="SlyNarcissa.html">
+
+                <img src="Narcissa.jpeg" alt="Narcissa Malfoy" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Narcissa Malfoy</p>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="row1">
+
+        <div class="polaroid india slytheril">
+            <a href="SlyDolores.html">
+
+                <img src="Dolores.jpeg" alt="Dolores Umbridge" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Dolores Umbridge</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenCho.html">
+
+                <img src="Cho.jpeg" alt="Cho Chang" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Cho Chang</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffCedric.html">
+
+                <img src="Cedric.jpeg" alt="Cedric Diggory" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Cedric Diggory</p>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffViktor.html">
+
+                <img src="Viktor.jpeg" alt="Viktor Krum" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Viktor Krum</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india">
+            <a href="UnknownFleur.html">
+
+                <img src="Fleur.jpeg" alt="Fleur Delacour" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Fleur Delacour</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india">
+            <a href="UnknownAlastor.html">
+
+                <img src="Alastor.webp" alt="Alastor Moody" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Alastor Moody</p>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryKingsley.html">
+
+                <img src="King.jpeg" alt="Kingsley Shacklebolt" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Kingsley Shacklebolt</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenSybill.html">
+
+                <img src="Sybill.jpeg" alt="Sybill Trelawney" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Sybill Trelawney</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india slytheril">
+            <a href="SlyHorace.html">
+
+                <img src="Horace.jpeg" alt="Horace Slughorn" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Horace Slughorn</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india">
+            <a href="UnknownArgus.html">
+
+                <img src="Argus.jpeg" alt="Argus Filch" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Argus Filch</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenFilius.html">
+
+                <img src="flitwich-quiz-image.jpg" alt="Filius Flitwick" style="width: 240px;height: 300px;opacity: 0.8;">
+                <div class="container">
+                    <p>Filius Flitwick</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenGilderoy.html">
+
+                <img src="Gilderoy.jpeg" alt="Gilderoy Lockhart" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Gilderoy Lockhart</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenQuirinus.html">
+
+                <img src="Quirinus_Quirrell.png" alt="Quirinus Quirrell" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Quirinus Quirrell</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryPeter.html">
+
+                <img src="Petter.webp" alt="Peter Pettigrew" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Peter Pettigrew</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india slytheril">
+            <a href="SlyCornelius.html">
+
+                <img src="Cornelius.jpeg" alt="Cornelius Fudge" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Cornelius Fudge</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+
+    <div class="row1">
+
+        <div class="polaroid india slytheril">
+            <a href="SlyRufus.html">
+
+                <img src="Rufus.jpeg" alt="Rufus Scrimgeour" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Rufus Scrimgeour</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffMundungus.html">
+
+                <img src="Mundungus.png" alt="Mundungus Fletcher" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Mundungus Fletcher</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india">
+            <a href="UnknownKreacher.html">
+
+                <img src="Kreacher.jpeg" alt="Kreacher" style="width: 240px;height: 300px;" >
+                <div class="container">
+                    <p>Kreacher</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india">
+            <a href="UnknownDobby.html">
+
+                <img src="Dobby.jpeg" alt="Dobby" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Dobby</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india">
+            <a href="UnknownGriphook.html">
+
+                <img src="Gripbook.jpeg" alt="Griphook" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Griphook</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenMoaning.html">
+
+                <img src="Myrtl.jpeg" alt="Moaning Myrtle" style="width: 220px;height: 300px;" >
+                <div class="container">
+                    <p>Moaning Myrtle</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+
+    <div class="row1">
+
+        <div class="polaroid india">
+            <a href="UnknownOlympe.html">
+
+                <img src="O copy.jpg" alt="Olympe Maxime" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Olympe Maxime</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryDean.html">
+
+                <img src="Dean.webp" alt="Dean Thomas" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Dean Thomas</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryLavender.html">
+
+                <img src="lAVENDER.jpeg" alt="Lavender Brown" style="width: 220px;height: 300px;" >
+                <div class="container">
+                    <p>Lavender Brown</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenPadma.html">
+
+                <img src="Padma.jpeg" alt="Padma Patil" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Padma Patil</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GrySeamus.html">
+
+                <img src="Seamus.jpeg" alt="Seamus Finnigan" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Seamus Finnigan</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryOliver.html">
+
+                <img src="Oliver.jpeg" alt="Oliver Wood" style="width: 240px;height: 300px;" >
+                <div class="container">
+                    <p>Oliver Wood</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india slytheril">
+            <a href="SlyMarcus.html">
+
+                <img src="Marcus.webp" alt="Marcus Flint" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Marcus Flint</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffSprout.html">
+
+                <img src="Sprout.jpeg" alt="Professor Sprout" style="width: 240px;height: 300px;background-color: #000;">
+                <div class="container">
+                    <p>Professor Sprout</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffErnie.html">
+
+                <img src="Ernie.jpeg" alt="Ernie Macmillan" style="width: 240px;height: 300px;" >
+                <div class="container">
+                    <p>Ernie Macmillan</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffHannah.html">
+
+                <img src="Hanna.jpeg" alt="Hannah Abbott" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Hannah Abbott</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryColin.html">
+
+                <img src="Colin.jpeg" alt="Colin Creevey" style="width: 240px;height: 300px;background-color: #000;">
+                <div class="container">
+                    <p>Colin Creevey</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india">
+            <a href="UnknownIgor.html">
+
+                <img src="iGOR.jpeg" alt="Igor karkaroff" style="width: 240px;height: 300px;" >
+                <div class="container">
+                    <p>Igor karkaroff</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryKatie.html">
+
+                <img src="Katie.jpeg" alt="Hannah Abbott" style="width: 220px;height: 300px;filter: brightness(80%);">
+                <div class="container">
+                    <p>Katie Bell</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Hufflepuf">
+            <a href="HuffSusan.html">
+
+                <img src="Susan.jpeg" alt="Susan Bones" style="width: 220px;height: 300px;">
+                <div class="container">
+                    <p>Susan Bones</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenMicheal.html">
+
+                <img src="Micheal.jpeg" alt="Michael Corner" style="width: 220px;height: 300px;filter: brightness(90%);" >
+                <div class="container">
+                    <p>Michael Corner</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+    <div class="row1">
+
+        <div class="polaroid india Ravenclaw">
+            <a href="RavenMarietta.html">
+
+                <img src="Marietta.jpeg" alt="Marietta Edgecombe" style="width: 220px;height: 300px;filter: brightness(90%);">
+                <div class="container">
+                    <p>Marietta Edgecombe</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryAngelina.html">
+
+                <img src="Angelina.jpeg" alt="Angelina Johnson" style="width: 220px;height: 300px;filter: brightness(80%);">
+                <div class="container">
+                    <p>Angelina Johnson</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryLee.html">
+
+                <img src="Lee.png" alt="Lee Jordan" style="width: 220px;height: 300px;" >
+                <div class="container">
+                    <p>Lee Jordan</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="row1">
+
+        <div class="polaroid india Gryfinndor">
+            <a href="GryParvati.html">
+
+                <img src="Parvati.jpeg" alt="Parvati Patil" style="width: 240px;height: 300px;">
+                <div class="container">
+                    <p>Parvati Patil</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="polaroid india Gryfinndor">
+            <a href="GryAlicia.html">
+
+                <img src="Alicia.jpeg" alt="Alicia Spinnet" style="width: 100%;height: 300px;">
+                <div class="container">
+                    <p>Alicia Spinnet</p>
+                </div>
+            </a>
+        </div>
+       
+        
+        <div class="polaroid india">
+            <a href="UnknownHedwig.html">
+
+                <img src="Hedwig.jpeg" alt="Hedwig" style="width: 240px;height: 310px;" >
+                <div class="container">
+                    <p>Hedwig</p>
+                </div>
+            </a>
+        </div>
+        
+
+
+    </div>
+</div>
+
+    <!-- <script src="encyscript.js"></script> -->
+</body>
+
+
+
+<script>
+    $(window).load(function(){
+         $('.loader-wrapper').delay(2000).fadeOut('slow');
+    });
+</script>
+<script>
+    const impimp = ()=>{
+        const searchitems = document.getElementById("imp").value.toUpperCase();
+        const allcharacters =document.getElementsByClassName("characters");
+        const individualcharacter = document.querySelectorAll(".row1")
+        const individualcharacters = document.querySelectorAll(".polaroid");
+        // const individualcharacters = document.querySelectorAll(".container");
+        const charactername =document.getElementsByTagName("p");
+    
+        for(var i=0;i<charactername.length;i++){
+            let match=individualcharacters[i].getElementsByTagName("p")[0];
+    
+            if(match){
+                let textvalue= match.innerHTML || match.textContent
+    
+                if(textvalue.toUpperCase().indexOf(searchitems) > -1){
+                    individualcharacters[i].style.display="";
+                }
+                // else if(){
+                //     individualcharacter[i].style.display="none";
+                // }
+                else{
+                    individualcharacters[i].style.display="none";
+                    
+                }
+                
+                
+            }
+        }
+        // individualcharacter[].style.display="none";
+    }
+
+</script>
+
+<!-- // $(window).on("load", function () {
+//     $('.loader-wrapper').fadeOut("slow");
+// });
+
+
+
+
+// var loader=document.getElementById('loader-wrapper');
+// window.addEventListener("load",function(){
+//     loader.style.display="none";
+    
+// }) -->
+
+
+</html>

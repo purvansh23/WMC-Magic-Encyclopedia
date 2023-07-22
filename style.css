@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Amatic+SC:wght@700&family=Bebas+Neue&family=Courgette&family=Indie+Flower&family=Lato:wght@400;700&family=Lexend&family=Martian+Mono:wght@500&family=Pacifico&family=Roboto+Condensed&family=Sacramento&family=Satisfy&family=Shadows+Into+Light&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Amatic+SC:wght@700&family=Bebas+Neue&family=Courgette&family=Indie+Flower&family=Lato:wght@400;700&family=Lexend&family=Martian+Mono:wght@500&family=Pacifico&family=Roboto+Condensed&family=Sacramento&family=Satisfy&family=Shadows+Into+Light&family=Yusei+Magic&display=swap');
 
 *{
     margin: 0;
@@ -41,29 +43,39 @@ header::before{
     height: 90px;
     /* filter: invert(30%); */
 }
+.login{
+    float: right;
+}
+
 .searchbar{
     float: right;
     margin-top: 40px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* margin-right: 200px; */
     border: 2px solid white;
     border-radius: 15px;
-    width: 200px;
+    width: 150px;
 }
 i{
     color: white;
-    padding: 5px 5px;
-    background-color: #242633b5;
-    /* background: none; */
+    padding: 7px 8px;
+    /* background-image: linear-gradient(to bottom,#242633,#2426337d,#24263336); */
+    background: none;
     border: none;
+    cursor: pointer;
+
 
 }
 .searchbar input{
-    width: 150px;
-    padding: 5px 5px;
+    width: 100px;
+    padding: 5px 8px;
     background: none;
     /* border: 2px solid white; */
     /* border-radius: 15px; */
     border: none;
+    font-size: 18px;
+    outline: none;
 }
 ::placeholder{
     color: white;
@@ -118,6 +130,7 @@ i{
 .head123{
     font-family: 'Yusei Magic', sans-serif;
     width: 500px;
+    margin-left: 30px;
     /* font-weight: 700; */
     /* font-size: 3rem; */
 }
@@ -153,3 +166,27 @@ i{
     background-color: black;
 } */
 
+.login{
+    /* padding: 10px 10px; */
+    margin-top: 40px;
+    /* margin-left: 1000px; */
+   
+}
+.btnlog{
+    padding: 7px 20px;
+    background: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+.login a{
+    /* padding: 200px 10px; */
+    color: white;
+    outline: none;
+    text-decoration: none;
+    font-size: 18px;
+
+}
+.btnlog:hover{
+    background-color: gray;
+}
